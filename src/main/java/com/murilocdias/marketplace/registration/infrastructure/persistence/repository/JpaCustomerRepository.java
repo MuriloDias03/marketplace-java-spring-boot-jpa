@@ -1,8 +1,10 @@
 package com.murilocdias.marketplace.registration.infrastructure.persistence.repository;
 
+import com.murilocdias.marketplace.common.infrastructure.event.dto.CustomerCreated;
 import com.murilocdias.marketplace.registration.domain.Customer;
 import com.murilocdias.marketplace.registration.domain.CustomerId;
 import com.murilocdias.marketplace.registration.domain.CustomerRepository;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,14 +16,21 @@ public class JpaCustomerRepository implements CustomerRepository {
 
     private final CustomerEntityRepository customerEntityRepository;
 
-    public JpaCustomerRepository(CustomerEntityRepository customerEntityRepository) {
+    private final ApplicationEventPublisher publisher;
+
+    public JpaCustomerRepository(CustomerEntityRepository customerEntityRepository,
+                                 ApplicationEventPublisher publisher) {
         this.customerEntityRepository = customerEntityRepository;
+        this.publisher = publisher;
     }
 
     @Override
     public Customer save(Customer customer) {
         var entity = mapper(customer);
         customerEntityRepository.save(entity);
+
+        publisher.publishEvent(new CustomerCreated(customer.getId().id().toString(), customer.getName()));
+
         return customer;
     }
 
