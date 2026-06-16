@@ -8,4 +8,7 @@ import java.util.UUID;
 
 @RepositoryRestResource(exported = false, path = "_event")
 public interface EventCrudRepository extends CrudRepository<Event, UUID> {
+
+    boolean existsByCorrelationIdAndSectors_Seats_CorrelationId(UUID eventId, String seatId);
+
 }
