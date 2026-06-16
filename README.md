@@ -52,13 +52,13 @@ O projeto segue os princípios de **DDD (Domain-Driven Design)** com **Clean Arc
 ┌─────────────────────────────────────────────────────────────────┐
 │                      MarketplaceApplication                     │
 │                   @EnableAsync  @EnableCaching                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────────┐ │
-│  │ Registration │  │   Catalog    │  │      Ticketing        │ │
-│  │   (MySQL)    │  │(MySQL+Mongo  │  │  (PostgreSQL+Redis)   │ │
-│  │              │  │    +Redis)   │  │                       │ │
-│  └──────┬───────┘  └──────┬───────┘  └───────────┬───────────┘ │
-│         │                 │                      │             │
-│         └────── Spring Application Events ───────┘             │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────────┐  │
+│  │ Registration │  │   Catalog    │  │      Ticketing        │  │
+│  │   (MySQL)    │  │(MySQL+Mongo  │  │  (PostgreSQL+Redis)   │  │
+│  │              │  │    +Redis)   │  │                       │  │
+│  └──────┬───────┘  └──────┬───────┘  └───────────┬───────────┘  │
+│         │                 │                      │              │
+│         └────── Spring Application Events ───────┘              │
 │                 (CustomerCreated, EventUpdated)                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
