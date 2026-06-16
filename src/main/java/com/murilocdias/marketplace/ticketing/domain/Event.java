@@ -15,7 +15,7 @@ public class Event {
 
     public Event(String correlationId, Map<Sector, List<Seat>> seats) {
         this.id = UUID.randomUUID();
-        this.correlationId = new EventId();
+        this.correlationId = new EventId(UUID.fromString(correlationId));
         this.seats = seats;
     }
 }
