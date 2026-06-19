@@ -395,6 +395,12 @@ cd marketplace-java-spring-boot-jpa
 
 <div align="center">
 
+Feito com ☕ por **Murilo C. Dias** — Bootcamp Santander 2026 | DIO
+
+</div>
+
+<div align="center">
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/murilo-cristovao-dias/)
 
 </div>
