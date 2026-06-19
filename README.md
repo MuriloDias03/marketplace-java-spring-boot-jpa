@@ -8,7 +8,7 @@
 
 Um sistema modular que simula um marketplace de ingressos para eventos, composto por **3 Bounded Contexts** independentes que se comunicam via **eventos de domínio**, cada um com seu próprio banco de dados — aplicando na prática o padrão de **Persistência Poliglota**.
 
-Este projeto foi desenvolvido durante o **Bootcamp back-end AI Java da Santander** pela [DIO](https://www.dio.me/).
+Este projeto foi desenvolvido durante o **Bootcamp AI Java back-end da Santander** pela [DIO](https://www.dio.me/).
 
 ---
 
